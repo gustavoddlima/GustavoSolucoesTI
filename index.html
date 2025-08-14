@@ -3,855 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Soluções em TI - Manutenção e Criação de Sites</title>
-    <meta name="description" content="Gustavo Soluções em TI — manutenção de computadores, upgrades e criação de sites. Atendimento rápido e direto pelo WhatsApp.">
+    <title>Gustavo Soluções em TI - Manutenção, Suporte e Criação de Sites</title>
+    <meta name="description" content="Manutenção de computadores, upgrades, formatação, suporte remoto e criação de sites em Januária e região. Atendimento rápido via WhatsApp.">
+    <meta name="keywords" content="manutenção de computadores Januária, troca de SSD, formatação de PC, técnico em informática, criação de sites Januária, suporte remoto, upgrade de RAM">
     
-    <!-- Fontes do Google -->
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gustavo Soluções em TI - Seu Técnico de Confiança">
+    <meta property="og:description" content="Manutenção, upgrades e criação de sites com qualidade e rapidez. Chame no WhatsApp e tenha atendimento imediato.">
+    <meta property="og:image" content="https://seusite.com/imagens/og-image.jpg">
+    <meta property="og:url" content="https://seusite.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Ícones Font Awesome -->
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Reset e Estilos Globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --azul: #007BFF;
-            --cinza-escuro: #1E1E1E;
-            --cinza-claro: #f5f5f5;
-            --branco: #FFFFFF;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--cinza-escuro);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-color: var(--branco);
-            font-size: 15px;
-            padding-top: 80px; /* Espaço para o header fixo */
-        }
-        
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .container {
-            width: 95%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--azul);
-            color: var(--branco);
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-            width: 100%;
-            max-width: 280px;
-            margin: 10px auto;
-        }
-        
-        .btn:hover {
-            background: #0069d9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-        }
-        
-        section {
-            padding: 60px 0;
-            position: relative;
-        }
-        
-        /* Header Fixo Simplificado */
-        header {
-            background: var(--branco);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--azul);
-        }
-        
-        /* Menu Hamburguer */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        .menu-toggle span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background: var(--azul);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-        
-        nav {
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--azul);
-        }
-        
-        .whatsapp-btn {
-            background: var(--azul);
-            color: var(--branco);
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            transition: all 0.3s;
-            margin-left: 20px;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 5px;
-        }
-        
-        .whatsapp-btn:hover {
-            background: #0069d9;
-        }
-        
-        /* Promoção Banner Fixo */
-        .promo-banner {
-            background: #ff6b6b;
-            color: var(--branco);
-            padding: 12px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 60px;
-            z-index: 999;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .promo-banner p {
-            margin: 0;
-        }
-        
-        .promo-banner .timer {
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 3px 8px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-left: 5px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80') no-repeat center/cover;
-            min-height: 100vh;
-            color: var(--branco);
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding: 100px 0 60px;
-            margin-top: 40px; /* Compensa o banner */
-        }
-        
-        .hero-content {
-            width: 100%;
-            padding: 0 15px;
-        }
-        
-        .hero h1 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-        
-        .hero p {
-            font-size: 1rem;
-            margin-bottom: 25px;
-        }
-        
-        /* Seção de Serviços */
-        .servicos {
-            background: var(--cinza-claro);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-title h2 {
-            font-size: 1.6rem;
-            color: var(--cinza-escuro);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--azul);
-        }
-        
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        
-        .card {
-            background: var(--branco);
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card i {
-            font-size: 2.2rem;
-            color: var(--azul);
-            margin-bottom: 15px;
-        }
-        
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .card p {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        /* Sobre Mim */
-        .sobre-section {
-            padding: 60px 0;
-        }
-        
-        .sobre {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .sobre-img {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .sobre-content h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-        
-        .sobre-content p {
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        /* Depoimentos */
-        .depoimentos {
-            background: var(--cinza-claro);
-        }
-        
-        .depoimentos-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        
-        .depoimento-card {
-            background: var(--branco);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .depoimento-card .stars {
-            color: #FFD700;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        
-        .depoimento-card p {
-            font-style: italic;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        .cliente-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .cliente-info img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            margin-right: 12px;
-            object-fit: cover;
-        }
-        
-        .cliente-info h4 {
-            font-weight: 600;
-            font-size: 15px;
-        }
-        
-        /* Contato */
-        .contato {
-            text-align: center;
-        }
-        
-        .contato p {
-            max-width: 600px;
-            margin: 0 auto 25px;
-            font-size: 14px;
-        }
-        
-        /* WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #25D366;
-            color: var(--branco);
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            z-index: 100;
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--cinza-escuro);
-            color: var(--branco);
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .footer-content p {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        
-        .social-links {
-            margin: 20px 0;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin: 0 8px;
-            color: var(--branco);
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--azul);
-            transform: translateY(-3px);
-        }
-        
-        /* Animações */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        /* Media Queries para Mobile */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-            
-            .menu-toggle {
-                display: flex;
-            }
-            
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--branco);
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.3s ease;
-                z-index: 1000;
-            }
-            
-            nav.active {
-                right: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                padding: 20px;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-                text-align: center;
-            }
-            
-            .whatsapp-btn {
-                margin: 20px 0 0;
-            }
-            
-            .promo-banner {
-                top: 60px;
-                font-size: 13px;
-            }
-            
-            .hero {
-                margin-top: 40px;
-                padding: 80px 0 40px;
-            }
-            
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
-            }
-            
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
-            }
-            
-            .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s;
-            }
-            
-            .overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-        
-        /* Media Queries para Telas Maiores */
-        @media (min-width: 768px) {
-            .hero {
-                padding: 160px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .servicos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .sobre {
-                flex-direction: row;
-                align-items: center;
-                gap: 50px;
-            }
-            
-            .sobre-img {
-                flex: 1;
-            }
-            
-            .sobre-content {
-                flex: 1;
-            }
-            
-            .depoimentos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .btn {
-                width: auto;
-                padding: 12px 30px;
-            }
-        }
-        
-        @media (min-width: 992px) {
-            .servicos-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .depoimentos-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+        /* Seu CSS original adaptado */
+        * {margin:0;padding:0;box-sizing:border-box;}
+        :root {--azul:#007BFF;--cinza-escuro:#1E1E1E;--cinza-claro:#f5f5f5;--branco:#FFFFFF;}
+        body {font-family:'Poppins',sans-serif;color:var(--cinza-escuro);line-height:1.6;overflow-x:hidden;background-color:var(--branco);font-size:15px;padding-top:80px;}
+        h1,h2,h3{font-weight:700;}
+        a{text-decoration:none;color:inherit;}
+        img{max-width:100%;height:auto;}
+        .container{width:95%;max-width:1200px;margin:0 auto;padding:0 15px;}
+        .btn{display:inline-block;background:var(--azul);color:var(--branco);padding:12px 25px;border-radius:30px;font-weight:600;transition:all 0.3s ease;border:none;cursor:pointer;text-align:center;font-size:14px;max-width:280px;margin:10px auto;}
+        .btn:hover{background:#0069d9;transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,123,255,0.3);}
+        section{padding:60px 0;}
+        header{background:var(--branco);box-shadow:0 2px 10px rgba(0,0,0,0.1);position:fixed;width:100%;top:0;z-index:1000;padding:15px 0;transition:all 0.3s ease;}
+        .header-container{display:flex;justify-content:space-between;align-items:center;}
+        .logo{font-size:1.3rem;font-weight:700;color:var(--azul);}
+        .menu-toggle{display:none;flex-direction:column;justify-content:space-between;width:30px;height:21px;cursor:pointer;}
+        .menu-toggle span{display:block;height:3px;width:100%;background:var(--azul);border-radius:3px;transition:all 0.3s ease;}
+        nav{display:flex;align-items:center;}
+        nav ul{display:flex;list-style:none;}
+        nav ul li{margin-left:20px;}
+        nav ul li a{font-size:15px;font-weight:500;transition:color 0.3s;}
+        nav ul li a:hover{color:var(--azul);}
+        .whatsapp-btn{background:var(--azul);color:var(--branco);padding:8px 15px;border-radius:30px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;margin-left:20px;}
+        .whatsapp-btn:hover{background:#0069d9;}
+        .promo-banner{background:#ff6b6b;color:var(--branco);padding:8px 0;text-align:center;position:fixed;width:100%;top:60px;z-index:999;font-size:14px;font-weight:600;}
+        .promo-banner .timer{font-weight:700;background:rgba(255,255,255,0.2);padding:3px 8px;border-radius:20px;display:inline-block;margin-left:5px;}
+        .hero{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&w=800&q=80') no-repeat center/cover;min-height:100vh;color:var(--branco);display:flex;align-items:center;text-align:center;padding:100px 0 60px;margin-top:40px;}
+        .hero h1{font-size:1.9rem;margin-bottom:15px;}
+        .hero p{font-size:1rem;margin-bottom:25px;}
+        .section-title{text-align:center;margin-bottom:40px;}
+        .section-title h2{font-size:1.6rem;color:var(--cinza-escuro);position:relative;display:inline-block;padding-bottom:10px;}
+        .section-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--azul);}
+        .servicos-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+        .card{background:var(--branco);border-radius:8px;padding:25px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.05);transition:transform 0.3s ease;}
+        .card:hover{transform:translateY(-5px);}
+        .card i{font-size:2.2rem;color:var(--azul);margin-bottom:15px;}
+        .sobre{display:flex;flex-direction:column;gap:30px;}
+        .sobre-img{border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+        .sobre-content h2{font-size:1.6rem;margin-bottom:20px;}
+        .sobre-content p{margin-bottom:15px;}
+        .selo-confianca{margin-top:20px;display:flex;align-items:center;gap:10px;font-weight:600;color:var(--azul);}
+        .depoimentos-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+        .depoimento-card{background:var(--branco);border-radius:8px;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+        .depoimento-card .stars{color:#FFD700;margin-bottom:10px;}
+        .contato{text-align:center;}
+        .whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;color:var(--branco);width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 5px 15px rgba(37,211,102,0.3);}
+        footer{background:var(--cinza-escuro);color:var(--branco);padding:30px 0;text-align:center;}
+        @media(max-width:768px){
+            body{padding-top:60px;}
+            .menu-toggle{display:flex;}
+            nav{position:fixed;top:0;right:-100%;width:80%;max-width:300px;height:100vh;background:var(--branco);flex-direction:column;justify-content:center;align-items:center;transition:right 0.3s ease;}
+            nav.active{right:0;}
+            .promo-banner{padding:6px 0;font-size:13px;}
+        }
+        @media(min-width:768px){
+            .servicos-grid{grid-template-columns:repeat(2,1fr);}
+            .sobre{flex-direction:row;align-items:center;gap:50px;}
+            .depoimentos-grid{grid-template-columns:repeat(2,1fr);}
+        }
+        @media(min-width:992px){
+            .servicos-grid{grid-template-columns:repeat(3,1fr);}
+            .depoimentos-grid{grid-template-columns:repeat(3,1fr);}
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Gustavo Soluções em TI</a>
-            
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                </ul>
-                <a href="https://wa.me/5538984362090" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            </nav>
+
+<header>
+    <div class="container header-container">
+        <a href="#" class="logo">Gustavo Soluções em TI</a>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+            </ul>
+            <a href="https://wa.me/5538984362090" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </nav>
+    </div>
+</header>
+
+<div class="promo-banner">
+    <p>🔥 10% OFF no primeiro serviço! <span class="timer" id="countdown">30:00</span> <a href="https://wa.me/5538984362090" style="color:white;text-decoration:underline;">Chame agora</a></p>
+</div>
+
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Seu técnico de confiança em Januária e região</h1>
+        <p>Manutenção, upgrades e criação de sites com qualidade, rapidez e garantia.</p>
+        <a href="https://wa.me/5538984362090" class="btn"><i class="fab fa-whatsapp"></i> Atendimento Imediato</a>
+    </div>
+</section>
+
+<section class="servicos" id="servicos">
+    <div class="container">
+        <div class="section-title"><h2>Serviços</h2></div>
+        <div class="servicos-grid">
+            <div class="card"><i class="fas fa-tools"></i><h3>Manutenção de Computadores</h3><p>Diagnóstico e reparo de hardware e software.</p></div>
+            <div class="card"><i class="fas fa-memory"></i><h3>Upgrade de Hardware</h3><p>Troca de SSD, memória RAM e fonte.</p></div>
+            <div class="card"><i class="fas fa-sync-alt"></i><h3>Formatação</h3><p>Seu computador rápido como novo.</p></div>
+            <div class="card"><i class="fas fa-download"></i><h3>Instalação de Programas</h3><p>Softwares configurados e prontos.</p></div>
+            <div class="card"><i class="fas fa-code"></i><h3>Criação de Sites</h3><p>Sites modernos e responsivos.</p></div>
+            <div class="card"><i class="fas fa-headset"></i><h3>Suporte Remoto</h3><p>Ajuda sem precisar sair de casa.</p></div>
         </div>
-    </header>
-    
-    <!-- Overlay para menu mobile -->
-    <div class="overlay" id="overlay"></div>
-    
-    <!-- Promoção Banner -->
-    <div class="promo-banner">
-        <div class="container">
-            <p>🔥 PROMOÇÃO: 10% OFF no primeiro serviço! <span class="timer" id="countdown">30:00</span></p>
+        <div style="text-align:center;margin-top:20px;">
+            <a href="https://wa.me/5538984362090" class="btn"><i class="fab fa-whatsapp"></i> Quero um orçamento</a>
         </div>
     </div>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Soluções rápidas e confiáveis em tecnologia</h1>
-                <p>Manutenção, upgrades e criação de sites com qualidade e garantia.</p>
-                <a href="https://wa.me/5538984362090?text=Olá%20Gustavo,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20com..." class="btn"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+</section>
+
+<section class="sobre-section" id="sobre">
+    <div class="container">
+        <div class="sobre">
+            <div class="sobre-img"><img src="imagens/Gustavo Soluções em TI.png" loading="lazy" alt="Gustavo - Técnico em TI"></div>
+            <div class="sobre-content">
+                <h2>Sobre Mim</h2>
+                <p>Sou Gustavo, técnico especializado em soluções de informática. Atendo clientes de forma rápida e confiável, sempre com foco na qualidade.</p>
+                <div class="selo-confianca"><i class="fas fa-shield-alt"></i> Atendimento Garantido</div>
+                <a href="https://wa.me/5538984362090" class="btn"><i class="fab fa-whatsapp"></i> Fale comigo</a>
             </div>
         </div>
-    </section>
-    
-    <!-- Serviços -->
-    <section class="servicos" id="servicos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossos Serviços</h2>
-            </div>
-            <div class="servicos-grid">
-                <div class="card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Manutenção de Computadores</h3>
-                    <p>Conserto profissional para todos os tipos de hardware e software.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-memory"></i>
-                    <h3>Upgrade de Hardware</h3>
-                    <p>Troca de SSD, Memória RAM e Fonte para melhor desempenho.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Formatação</h3>
-                    <p>Seu computador rápido como novo com backup dos arquivos.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-download"></i>
-                    <h3>Instalação de Programas</h3>
-                    <p>Todos os softwares que você precisa, instalados e configurados.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-code"></i>
-                    <h3>Criação de Sites</h3>
-                    <p>Sites modernos e responsivos para seu negócio.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte Remoto</h3>
-                    <p>Atendimento rápido sem sair de casa.</p>
-                </div>
-            </div>
+    </div>
+</section>
+
+<section class="depoimentos" id="depoimentos">
+    <div class="container">
+        <div class="section-title"><h2>Depoimentos</h2></div>
+        <div class="depoimentos-grid">
+            <div class="depoimento-card"><div class="stars">★★★★★</div><p>"Resolveu meu problema rapidamente. Recomendo!"</p><strong>- Ana</strong></div>
+            <div class="depoimento-card"><div class="stars">★★★★★</div><p>"Troquei o HD por SSD e ficou perfeito!"</p><strong>- Roberto</strong></div>
+            <div class="depoimento-card"><div class="stars">★★★★☆</div><p>"Meu site ficou lindo e rápido. Trabalho impecável."</p><strong>- Juliana</strong></div>
         </div>
-    </section>
-    
-    <!-- Sobre Mim -->
-    <section class="sobre-section" id="sobre">
-        <div class="container">
-            <div class="sobre">
-                <div class="sobre-img">
-                    <img src="imagens/Gustavo Soluções em TI.png" alt="Gustavo - Técnico em TI">
-                </div>
-                <div class="sobre-content">
-                    <h2>Sobre Mim</h2>
-                    <p>Sou Gustavo, especialista em soluções de informática. Realizo manutenção, upgrades e criação de sites com foco em qualidade, rapidez e confiança. Meu objetivo é oferecer o melhor serviço para que seu equipamento ou projeto funcione perfeitamente.</p>
-                    <a href="https://wa.me/5538984362090?text=Olá%20Gustavo,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços" class="btn"><i class="fab fa-whatsapp"></i> Fale comigo</a>
-                </div>
-            </div>
+        <div style="text-align:center;margin-top:20px;">
+            <a href="https://g.page/r/CODIGO-DO-SEU-GOOGLE-REVIEWS" target="_blank" class="btn">Ver mais avaliações</a>
         </div>
-    </section>
-    
-    <!-- Depoimentos -->
-    <section class="depoimentos" id="depoimentos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Depoimentos</h2>
-            </div>
-            <div class="depoimentos-grid">
-                <div class="depoimento-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"Resolveu um problema no meu notebook que outros técnicos não conseguiram. Recomendo!"</p>
-                    <div class="cliente-info">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente">
-                        <h4>Ana Carolina</h4>
-                    </div>
-                </div>
-                <div class="depoimento-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"Troquei meu HD por SSD e o computador ficou novo! Explicou tudo direitinho."</p>
-                    <div class="cliente-info">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
-                        <h4>Roberto Almeida</h4>
-                    </div>
-                </div>
-                <div class="depoimento-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>"Contratei para criar o site da minha loja e superou minhas expectativas. Site rápido e profissional!"</p>
-                    <div class="cliente-info">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
-                        <h4>Juliana Santos</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contato -->
-    <section class="contato" id="contato">
-        <div class="container">
-            <div class="section-title">
-                <h2>Entre em Contato</h2>
-            </div>
-            <p>Problemas no computador ou precisa de um site? Chame agora pelo WhatsApp para um atendimento rápido!</p>
-            <a href="https://wa.me/5538984362090?text=Olá%20Gustavo,%20preciso%20de%20ajuda%20urgente%20com..." class="btn"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>Gustavo Soluções em TI</p>
-                <p>Técnico em Informática Profissional</p>
-                <div class="social-links">
-                    <a href="https://wa.me/5538984362090"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p>Atendimento em toda região de Januária</p>
-                <p>&copy; Todos os direitos reservados</p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5538984362090?text=Olá%20Gustavo,%20vi%20seu%20site%20e%20gostaria%20de%20um%20orçamento" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <!-- JavaScript -->
-    <script>
-        // Menu Hamburguer
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        const overlay = document.querySelector('.overlay');
-        
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            nav.classList.toggle('active');
-            overlay.classList.toggle('active');
-            
-            // Bloquear scroll quando menu está aberto
-            if (nav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // Fechar menu ao clicar em um link ou no overlay
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        overlay.addEventListener('click', function() {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            this.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // Contador regressivo da promoção
-        function startCountdown() {
-            let timeLeft = 30 * 60;
-            const countdownElement = document.getElementById('countdown');
-            
-            const timer = setInterval(() => {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                
-                countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
-                timeLeft--;
-                
-                if (timeLeft < 0) {
-                    clearInterval(timer);
-                    document.querySelector('.promo-banner').style.backgroundColor = '#1E1E1E';
-                    document.querySelector('.promo-banner p').innerHTML = 'Ainda podemos te ajudar! <i class="fas fa-smile"></i>';
-                }
-            }, 1000);
-        }
-        
-        // Scroll suave para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const promoHeight = document.querySelector('.promo-banner').offsetHeight;
-                    const totalOffset = headerHeight + promoHeight + 20;
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - totalOffset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Iniciar quando a página carregar
-        window.addEventListener('load', function() {
-            startCountdown();
-        });
-    </script>
+    </div>
+</section>
+
+<section class="contato" id="contato">
+    <div class="container">
+        <div class="section-title"><h2>Contato</h2></div>
+        <p>Precisa de ajuda agora? Clique abaixo e fale comigo pelo WhatsApp.</p>
+        <a href="https://wa.me/5538984362090" class="btn"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Gustavo Soluções em TI - Januária/MG</p>
+        <p>&copy; Todos os direitos reservados</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/5538984362090" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+const menuToggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('nav');
+menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');nav.classList.toggle('active');});
+function startCountdown(){let timeLeft=30*60;const el=document.getElementById('countdown');setInterval(()=>{const m=Math.floor(timeLeft/60);const s=timeLeft%60;el.textContent=`${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;timeLeft--;},1000);}
+window.addEventListener('load',startCountdown);
+</script>
+
 </body>
 </html>
